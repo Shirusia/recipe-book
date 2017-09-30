@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-xs-12">
+   <h4> Add new recipe: </h4>
+   <h5 style="color:red" *ngIf="message"> {{message}}</h5>
+     <label for="id"> Id </label>
+     <input type="number" id="id" class="form-control" #idInput>
+     <label for="name"> Name </label>
+     <input type="text" id="name" class="form-control" #nameInput>
+     <button class="btn btn-success" (click)="add()"> Add </button>
+    </div>
+</div>

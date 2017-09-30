@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h3> Id: {{recipe.id}},  Recipe: {{recipe.name}}
+      <span class="pull-right glyphicon" [ngClass]="{'glyphicon-star': recipe.favourite, 'glyphicon-star-empty': !recipe.favourite}" (click)="toggleFavourite()">
+      </span>
+      <!-- icon for big amount -->
+      <span class="pull-right glyphicon glyphicon-menu-hamburger" *ngIf="recipe.bigAmount"></span>
+    </h3>
+  </div>  
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+   <h4> Ingredients: </h4>
+   <ul>
+     <li *ngFor="let ingredient of recipe.ingredients">
+       {{ingredient.name}} - {{ingredient.amount}} {{ingredient.unit}}
+     </li>
+   </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+      <a class="pull-right glyphicon glyphicon-remove"  (click)="delete()">
+      </a>
+      <a class="pull-right glyphicon glyphicon-edit" routerLink="/recipes/{{recipe.id}}/edit">
+      </a>
+  </div>
+</div>

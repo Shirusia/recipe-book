@@ -1,0 +1,19 @@
+<div class="row" *ngFor="let recipe of recipes">
+  <div class="col-xs-12">
+    <a routerLink="recipes/{{recipe.id}}/details" class="list-goup-item" >
+      <span clas="pull-left list-group-item-heading">
+        {{recipe.name}}
+      </span>
+      <span class="pull-right glyphicon glyphicon-star" *ngIf="recipe.favourite">
+      </span>
+      <!-- icon for big amount -->
+      <span class="pull-right glyphicon glyphicon-menu-hamburger" *ngIf="recipe.bigAmount"></span>
+    </a>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-info" routerLink="recipes/add"> Add new recipe </button>
+  </div>
+</div>
